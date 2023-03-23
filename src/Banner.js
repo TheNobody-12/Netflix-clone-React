@@ -17,9 +17,7 @@ function Banner() {
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
-        <h1 className="banner__description">
-          This is a description of the movie
-        </h1>
+        <h1 className="banner__description">Movie Description</h1>
       </div>
 
       <div className="banner--fadeBottom" />
