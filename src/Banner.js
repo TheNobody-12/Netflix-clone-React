@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Banner.css";
+import axios from "./axios";
+import requests from "./Request";
 
 function Banner() {
+  // Fetching data from TMDB Database
+  const [movie, setMovie] = useState([]);
+
+  useEffect(() => {
+    // Run once when the banner loads
+    async function fetchData() {
+      const request = await axios.get(requests.fetchNetflixOriginals);
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      );
+      return request;
+    }
+    fetchData();
+  }, []);
+
+  console.log(movie);
+
+  // Truncate the description to 150 characters
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
@@ -34,6 +56,7 @@ function Banner() {
         </h1>
       </div>
 
+      {/* Nice fade in the bottom of the black banner */}
       <div className="banner--fadeBottom" />
     </header>
   );
