@@ -1,44 +1,47 @@
 import React from "react";
 import { useRef } from "react";
 import "./SignUpScreen.css";
-import { auth } from "../firebase";
+// import { auth } from "../firebase";
 
 function SignUpScreen() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const register = (e) => {
-    e.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
-      )
-      .then((authUser) => {
-        console.log(authUser);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  };
+  // const register = (e) => {
+  //   e.preventDefault();
+  //   auth
+  //     .createUserWithEmailAndPassword(
+  //       emailRef.current.value,
+  //       passwordRef.current.value
+  //     )
+  //     .then((authUser) => {
+  //       console.log(authUser);
+  //     })
+  //     .catch((error) => {
+  //       alert(error.message);
+  //     });
+  // };
 
-  const signIn = (e) => {
-    e.preventDefault();
-  };
+  // const signIn = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <div className="signUpScreen">
+      <h1>Sign Up Screen</h1>
       <form>
         <h1>Sign In</h1>
         <input ref={emailRef} type="Email" placeholder="Email" />
         <input ref={passwordRef} type="Password" placeholder="Password" />
-        <button type="Submit" onClick={signIn}>
+        <button type="Submit">
+          {/* onClick={signIn} */}
           Sign In
         </button>
 
         <h4>
           <span className="signUpScreen__gray">New to Netflix? </span>
-          <span className="signUpScreen__link" onClick={register}>
+          <span className="signUpScreen__link">
+            {/* onClick={register} */}
             Sign up now.
           </span>
         </h4>
