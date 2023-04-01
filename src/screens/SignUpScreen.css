@@ -10,6 +10,9 @@
   text-align: left;
   margin-bottom: 25px;
 }
+.signUpScreen > form > h4 {
+  padding-top: 10px;
+}
 
 .signUpScreen__gray {
   color: gray;
@@ -31,7 +34,7 @@
 }
 
 .signUpScreen > form > button {
-  padding: 10px;
+  padding: 16px 20px;
   font-size: 1rem;
   color: #fff;
   border-radius: 5px;
