@@ -9,7 +9,8 @@ function SignUpScreen() {
 
   const register = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(
+    auth
+      .createUserWithEmailAndPassword(
         emailRef.current.value,
         passwordRef.current.value
       )
@@ -23,17 +24,17 @@ function SignUpScreen() {
 
   const signIn = (e) => {
     e.preventDefault();
-    auth.signInWithEmailAndPassword(
-      emailRef.current.value,
-      passwordRef.current.value
-    )
-    .then((authUser) => {
-      console.log(authUser);
-    })
-    .catch((error) => {
-      alert(error.message);
-    }
-    );
+    auth
+      .signInWithEmailAndPassword(
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+      .then((authUser) => {
+        console.log(authUser);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   return (
@@ -43,13 +44,13 @@ function SignUpScreen() {
         <h1>Sign In</h1>
         <input ref={emailRef} type="Email" placeholder="Email" />
         <input ref={passwordRef} type="Password" placeholder="Password" />
-        <button type="Submit" onClick={signIn} >
+        <button type="Submit" onClick={signIn}>
           Sign In
         </button>
 
         <h4>
           <span className="signUpScreen__gray">New to Netflix? </span>
-          <span className="signUpScreen__link" onClick={register} >
+          <span className="signUpScreen__link" onClick={register}>
             Sign up now.
           </span>
         </h4>

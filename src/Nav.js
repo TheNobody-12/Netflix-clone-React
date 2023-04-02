@@ -1,7 +1,7 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Nav.css";
 // useHistory
-import  {  useNavigate }  from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
   const [show, handleShow] = useState(false);
